@@ -10,7 +10,8 @@ fun main(args : Array<String>) {
     print("nome do pokemon:")
 
     var (pkm: String) = readLine()!!.split(delimiters = ' ')
-    pkm = pkm.capitalize()
+    pkm = pkm.toLowerCase() //trata lEtRAs MinUsCUlas E maIuSCulAS
+    pkm = pkm.capitalize() //Finaliza o tratamento ex: Bulbasaur
 
     loop@ do{ //repetição para ajudar no tst cp == 0 sai do loop
 
@@ -18,7 +19,7 @@ fun main(args : Array<String>) {
 
     var CP: Int = readLine()!!.toInt()
 
-        when {
+        when { //insere os dados do pokemon escolido
             pkm == ("Bulbasaur") -> {
                 atk = 118.0 + 15.0
                 def = 118.0 + 15.0
@@ -1271,68 +1272,68 @@ fun main(args : Array<String>) {
             }
             else -> break@loop
         }
-
+    //vou otmizar o codigo a seguir no futuro
     var cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.094, 2.0) / 10
     if (cp < 10) cp = 10.0
-    if (cp.toInt() == CP) print("\n$pkm 100% lv1 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv1 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.16639787, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv2 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv2 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.21573247, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv3 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv3 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.25572005, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv4 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv4 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.29024988, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv5 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv5 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.3210876, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv6 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv6 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.34921268, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv7 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv7 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.37523559, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv8 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv8 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.39956728, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv9 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv9 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.42250001, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv10 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv10 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.44310755, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv11 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv11 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.46279839, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv12 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv12 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.48168495, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv13 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv13 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.49985844, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv14 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv14 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.51739395, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv15 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv15 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.53435433, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv16 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv16 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.55079269, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv17 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv17 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.56675452, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv18 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv18 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.58227891, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv19 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv19 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.59740001, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv20 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv20 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.61215729, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv21 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv21 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.62656713, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv22 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv22 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.64065295, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv23 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv23 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.65443563, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv24 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv24 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.667934, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv25 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv25 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.68116492, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv26 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv26 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.69414365, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv27 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv27 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.70688421, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv28 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv28 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.71939909, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv29 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv29 = " + cp.toInt())
     cp = atk!! * pow(def!!, 0.5) * pow(hp!!, 0.5) * pow(0.7317, 2.0) / 10
-    if (cp.toInt() == CP) print("\n$pkm 100% lv30 = " + cp.toInt())
+    if (cp.toInt() == CP) print("$pkm 100% lv30 = " + cp.toInt())
 
 }while(CP != 0)
 }
