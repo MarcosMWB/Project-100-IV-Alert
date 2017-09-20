@@ -7,7 +7,12 @@ fun main(args : Array<String>) {
     var hp: Double? = 0.0
     var lvl: Int? = 1
     var cp = 0.0
-    val cpm: Array<Double> = arrayOf(0.094,0.16639787,0.21573247,0.25572005,0.29024988,0.3210876,0.34921268,0.37523559,0.39956728,0.42250001,0.44310755,0.46279839,0.48168495,0.49985844,0.51739395,0.53435433,0.55079269,0.56675452,0.58227891,0.59740001,0.61215729,0.62656713,0.64065295,0.65443563,0.667934,0.68116492,0.69414365,0.70688421,0.71939909,0.7317)
+    var iva = 0.0
+    var ivd = 0.0
+    var ivh = 0.0
+    var percent = 0.0
+    var l = 0
+    val cpm: Array<Double> = arrayOf(0.094,0.16639787,0.21573247,0.25572005,0.29024988,0.3210876,0.34921268,0.37523559,0.39956728,0.42250001,0.44310755,0.46279839,0.48168495,0.49985844,0.51739395,0.53435433,0.55079269,0.56675452,0.58227891,0.59740001,0.61215729,0.62656713,0.64065295,0.65443563,0.667934,0.68116492,0.69414365,0.70688421,0.71939909,0.7317,0.73776948,0.74378943,0.74976104,0.75568551,0.76156384,0.76739717,0.7731865,0.77893275,0.78463697)
 
     print("nome do pokemon:")
 
@@ -15,7 +20,7 @@ fun main(args : Array<String>) {
     pkm = pkm.toLowerCase() //trata lEtRAs MinUsCUlas E maIuSCulAS
     pkm = pkm.capitalize() //Finaliza o tratamento ex: Bulbasaur
 
-    loop@ do{ //repetição para ajudar no tst cp == 0 sai do loop
+    loop@ do { //repetição para ajudar no tst cp == 0 sai do loop
 
         print("CP do pokemon:")
 
@@ -1275,18 +1280,35 @@ fun main(args : Array<String>) {
             else -> break@loop
         }
 
-        hp += 15.0
-        atk += 15.0
-        def += 15.0
-        lvl = 1
+        iva = 0.0
+        ivd = 0.0
+        ivh = 0.0
+        percent = 0.0
 
-        while(lvl!! < 31){
-            cp = cpformula(atk,def,hp,cpm[lvl-1])
-            if (cp < 10) cp = 10.0
-            if (cp.toInt() == CP) print("$pkm pode ser 100% se lvl = $lvl e cp:" + cp.toInt() + "\n")
-            lvl++
+        while (iva!! <= 15) {
+            ivd = 0.0
+            while(ivd!! <= 15) {
+                ivh = 0.0
+                while(ivh!! <= 15) {
+                    lvl = 1
+                    while (lvl!! < 40) {
+                        cp = cpformula(atk + iva, def + ivd, hp + ivh, cpm[lvl - 1])
+                        if (cp < 10)
+                            cp = 10.0
+                        if (cp.toInt() == CP && (percent < ((iva + ivd + ivh) / 45.0) * 100.0)) {
+                            percent = ((iva + ivd + ivh) / 45.0) * 100.0
+                            l = lvl
+                        }
+                        lvl++
+                    }
+                    ivh++
+                }
+                ivd++
+            }
+            iva++
         }
-    }while(CP != 0)
+        print("$pkm pode ser no maximo " + percent.toInt() + "% level $l com cp:" + CP.toInt() + "\n")
+    }while (CP != 0)
 }
 
 /*fun cpmformula(lvl:Double,cpm:Double): Double // funcao a ser feita
@@ -1294,7 +1316,7 @@ fun main(args : Array<String>) {
     var step: Double? = 0.0
     when {
         lvl < 10 -> step = 0.009426125469
-        lvl > 9.5 && lvl <     20 -> step = 0.008919025675
+        lvl > 9.5 && lvl < 20 -> step = 0.008919025675
         lvl > 19.5 && lvl < 30 -> step = 0.008924905903
         lvl > 29.5 && lvl < 40 -> step = 0.00445946079
     }
